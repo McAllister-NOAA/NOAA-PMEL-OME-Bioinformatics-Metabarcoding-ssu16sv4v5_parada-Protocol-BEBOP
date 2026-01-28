@@ -17,7 +17,7 @@ skills required: basic bash, R
 time required: variable
 personnel required: 1
 language: en
-issued: TBD
+issued: 2026-01-27
 audience: scientists
 publisher: 'NOAA Pacific Marine Environmental Laboratory Ocean Molecular Ecology Group | University of Washington Cooperative Institute for Climate, Ocean, & Ecosystem Studies'
 hasVersion: 1
@@ -129,8 +129,8 @@ screen_contam_0_1:
       default: 1
    - filtered-analytic:
       default: 1
-screen_contam_method: 'TBD check - 1) The composition of the positive control is used to estimate a maximum vector contamination, which is then subtracted proportionally from all ASVs in the run to remove background tag jumping. 2) Next negative control contaminants are removed either as a wholesale removal of the impacted ASV, or as a partial removal. 3) ASVs assigned to common contaminants are removed: human, food products, pets, common lab/consumable contaminants, laboratory controls.'
-screen_nontarget_method: 'TBD check - 1) Contaminanting off-target organisms were removed as described in screen_contam_method, removing common contaminants including human, food products, pets, common lab/consumable contaminants, laboratory controls.'
+screen_contam_method: 'TBD check - 1) The composition of the positive control is used to estimate a maximum vector contamination, which is then subtracted proportionally from all ASVs in the run to remove background tag jumping. 2) Next negative control contaminants are removed either as a wholesale removal of the impacted ASV or as a partial removal. 3) ASVs assigned to common contaminants are removed: human, food products, pets, common lab/consumable contaminants, laboratory controls.'
+screen_nontarget_method: 'TBD check - 1) Contaminating off-target organisms were removed as described in screen_contam_method, removing common contaminants including human, food products, pets, common lab/consumable contaminants, laboratory controls.'
 screen_other:
    - filtered-trusted:
       default: 'TBD check - In addition to the screening in screen_contam_method and screen_nontarget_method: 1) Remove positive and negative control samples. 2) Extreme low read depth sample removal. 3) Extreme low diversity sample removal (>99.9% of reads in one ASV). 4) Sample removal due to replicate dissimilarity distance from centroid above threshold.'
@@ -189,9 +189,12 @@ dada2_n_reads_learn:
 ### Minimum Information about an Omics Protocol (MIOP)
 
 - MIOP terms are listed in the YAML frontmatter of this page.
-- See <https://github.com/BeBOP-OBON/miop/blob/main/model/schema/terms.yaml> for list and definitions.
+- See <https://github.com/BeBOP-OBON/miop/blob/main/model/schema/terms.yaml> for the list and definitions.
 
 ### Authors
+
+- All authors known to have contributed to the preparation of this protocol should be listed, including those who filled in the template.
+- Visit <https://orcid.org/> to register for an ORCID.
 
 | PREPARED BY | AFFILIATION | ORCID | DATE |
 | ------------- | ------------- | ------------- | ------------- |
@@ -200,41 +203,28 @@ dada2_n_reads_learn:
 | Shannon Brown | Ocean Molecular Ecology, NOAA PMEL & UW CICOES | <https://orcid.org/0000-0001-9808-2638> | 2025-04-30 |
 | Zachary Gold | Ocean Molecular Ecology, NOAA PMEL | <https://orcid.org/0000-0003-0490-7630> | 2025-04-30 |
 
-- All authors known to have contributed to the preparation of this protocol should be listed, including those who filled in the template.
-- Visit <https://orcid.org/> to register for an ORCID.
-
 ### Protocol Revision Record
-
-| VERSION | RELEASE DATE | DESCRIPTION OF REVISIONS |
-| ------------- | ------------- | ------------- |
-| 1.0.0 | 2025-MM-DD | Initial release |
 
 - Version numbers start at 1.0.0 when the protocol is first completed and will increase when changes that impact the outcome of the procedure are made (patches: 1.0.1; minor changes: 1.1.0; major changes: 2.0.0).
 - Release date is the date when a given protocol version was finalised.
 - Description of revisions includes a brief description of what was changed relative to the previous version.
 
----
-
-NEED TO EDIT HEADINGS BELOW...
-
-### RELATED PROTOCOLS IN YOUR FOLDER
-
-This is a list of other protocols deposited in your folder which should be known to users of this protocol. For example, if you create a derivative or altered protocol, you would link to the original protocol in the section below. Please include the link to each related protocol. Also include the version number of that protocol when you linked to it.
-
-| PROTOCOL NAME AND LINK  | VERSION The version of the protocol you linked to | RELEASE DATE This is the date corresponding to the version listed to the left |
+| VERSION | RELEASE DATE | DESCRIPTION OF REVISIONS |
 | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | yyyy-mm-dd  |
-| Content Cell  | Content Cell  | yyyy-mm-dd  |
+| 1.0.0 | 2025-MM-DD | Initial release |
 
-### RELATED EXTERNAL PROTOCOLS
+### Related Protocols
 
-This is a list of other protocols that are not in your folder which should be known to users of this protocol. These include, e.g., kit manuals. Please upload all relevant external protocols to Appendix A and link to them here.
+- This section contains protocols that should be known to users of this protocol.
+- Include the link to each protocol.
+- Include the version number and release date (if available).
+- Internal/External: "Internal" are derivative or altered protocols, or other protocols in this workflow. "External" are protocols from manufacturers or other groups.
 
-| EXTERNAL PROTOCOL NAME AND LINK  | ISSUER / AUTHOR Please note who authored the protocol (this may also be a company name) | ACCESS DATE This is the date you downloaded or scanned the protocol and uploaded it. |
-| ------------- | ------------- | ------------- |
-| [decontam](https://github.com/benjjneb/decontam) | [Davis, Proctor, Holmes, Relman, Callahan 2018](https://doi.org/10.1186/s40168-018-0605-2)  | 2025-12-19  |
-| [microDecon](https://github.com/donaldtmcknight/microDecon)  | McKnight 2021  | 2025-12-19  |
-| [Gruinard decon](https://github.com/zjgold/gruinard_decon) | Gold 2020 | 2025-12-19 |
+| PROTOCOL NAME | LINK         | VERSION      | RELEASE DATE | INTERNAL/EXTERNAL |
+| ------------- | ------------ | ------------ | ------------ | ----------------- |
+| [decontam](https://github.com/benjjneb/decontam) | [Davis, Proctor, Holmes, Relman, Callahan 2018](https://doi.org/10.1186/s40168-018-0605-2)  | 2025-12-19  | External |
+| [microDecon](https://github.com/donaldtmcknight/microDecon)  | McKnight 2021  | 2025-12-19  | External |
+| [Gruinard decon](https://github.com/zjgold/gruinard_decon) | Gold 2020 | 2025-12-19 | External |
 
 ### Acronyms and Abbreviations
 
@@ -247,21 +237,32 @@ This is a list of other protocols that are not in your folder which should be kn
 | ASV | Amplicon Sequencing Variant |
 | BLAST | Basic Local Alignment Search Tool |
 | CICOES | Cooperative Institute for Climate, Ocean, and Ecosystem Studies |
-| COI | Cytochrome c oxidase subunit I gene region |
+| COI | Cytochrome c oxidase subunit I gene region 
+| DwC| Darwin Core |
+| GBIF | Global Biodiversity Information Facility |
 | ITS1 | Internal Transcribed Spacer 1 region |
 | IUPAC | Content Cell |
 | NCBI | National Center for Biotechnology Information |
 | NOAA | National Oceanographic and Atmospheric Administration |
+| OBIS | Ocean Biodiversity Information System | 
+| ODE | Ocean DNA Explorer | 
+|OME| Ocean Molecular Ecology|
 | PMEL | Pacific Marine Environmental Laboratory |
 | REVAMP | Rapid Exploration and Visualization through an Automated Metabarcoding Pipeline |
+| SRA | 
 | UW | University of Washington |
 
 ### GLOSSARY
 
 | SPECIALISED TERM | DEFINITION |
 | ------------- | ------------- |
+| Denoising | The process of identifying and correcting sequencing errors to resolve true biological sequences (ASVs) from noise. |
+| Demultiplexing| The process of sorting raw sequencing reads into sample-specific files based on unique index sequences (barcodes). |
+| Index hopping | A phenomenon where indices are incorrectly assigned to the wrong library during sequencing, often mitigated by the UDIs (Unique Dual Indexes) mentioned in your protocol. |
+| Negative control | Samples containing no intentional template DNA, used to monitor contamination during collection or processing.|
+| Positive control  | A sample with a known DNA composition used to verify the success of the sequencing run and bioinformatic pipeline. |
+| Singleton | An ASV that appears only once in the entire dataset (often filtered out to reduce noise). |
 | SILVA  | Content Cell  |
-| Content Cell  | Content Cell  |
 
 ## BACKGROUND
 
@@ -269,21 +270,51 @@ This document describes the required protocol to conduct insert name of the meth
 
 ### Summary
 
-Insert a short description of the background for the method/protocol (e.g. why and for which purpose do you perform water sampling).
-Please provide a brief summary of your method including, as appropriate, a brief description of what techniques your best practice is about, which ocean environments or regions it targets, the primary sensors covered, what type of data/measurements/observing platform it covers, limits to its applicability.
+Insert a short description of the background for the method/protocol (e.g. why and for which purpose do you perform water sampling). Please provide a brief summary of your method including, as appropriate, a brief description of what techniques your best practice is about, which ocean environments or regions it targets, the primary sensors covered, what type of data/measurements/observing platform it covers, limits to its applicability.
 
-### Method description and rationale
+### Method Description and Rationale
 
 Insert a short description of the functioning principal of the methodology used in the protocol (i.e. how does the method work?). Please note that this is different from the step-by-step description of the protocol procedure.
 Insert a short statement explaining why the specific methodology used in the protocol has been selected (e.g. it is highly reproducible, highly accurate, procedures are easy to execute etc….).
 
 Data is run through this standard operating procedure at the sequencing run level, including all samples from the run, regardless of source project. The purpose of this is to maintain reproducibility and operate DADA2 as intended, allowing for proper error learning.
 
+### Personnel Required
+
+Insert the number of technicians, data managers, and scientists required for the good execution of the procedure
+
+### Safety
+
+No hazards or specialized safety equipment are associated with this protocol.
+
+### Training Requirements
+
+Specify the technical training required for the good execution of the procedure.
+
+### Time Needed to Execute the Procedure
+
+Specify how much time is necessary to execute the procedure.
+
+## EQUIPMENT
+
+| NAME | VERSION OR MODEL | MANUFACTURER OR CREATOR | REMARKS |
+| ------------- | ------------- | ------------- | ------------- |
+| Equipment |
+| Laptop | Content Cell | Content Cell | e.g. needs at least 16 GB of RAM |
+| Content Cell | Content Cell | Content Cell | Content Cell |
+| Software |
+| Content Cell | Content Cell | Content Cell | Content Cell |
+| Content Cell | Content Cell | Content Cell | Content Cell |
+| Code |
+| Please include the links to the code you used for this analysis |
+| e.g. link to the released version of a github repository  | Content Cell | Content Cell | Content Cell |
+| Content Cell | Content Cell | Content Cell | Content Cell 
+
 ## STANDARD OPERATING PROCEDURE
 
 ### Raw Data Download and QA/QC
 
-Raw reads (fastq.gz) are provided by the sequencing center demultiplexed by sample and marker (see sequencing center BeBops listed in RELATED PROTOCOLS). Demultiplexing is done in two stages, depending on whether or not any sample•marker pair share the same Illumina index. If all sample•marker pairs have a unique index, then demultiplexing is completed using pheniqs v2.1.0 only, with 0 allowed mismatches. If samples have unique indices, but markers do not, then first samples are separated with pheniqs v2.1.0 (0 mismatch), followed by marker separation using Cutadapt v3.4 (loose 30% allowed mismatch to primer; primer kept for a second more strict matching later in the workflow). On downloading reads to the local compute infrastructure, fidelity of the downloaded file is checked via a `md5sum` check. Md5s are either supplied by the sequencing center with the original download (fastq.gz.md5) or are provided separately.
+Raw reads (fastq.gz) are provided by the sequencing center, demultiplexed by sample and marker (see sequencing center BeBops listed in RELATED PROTOCOLS). Demultiplexing is done in two stages, depending on whether or not any sample•marker pair shares the same Illumina index. If all sample•marker pairs have a unique index, then demultiplexing is completed using pheniqs v2.1.0 only, with 0 allowed mismatches. If samples have unique indices, but markers do not, then first samples are separated with pheniqs v2.1.0 (0 mismatch), followed by marker separation using Cutadapt v3.4 (loose 30% allowed mismatch to primer; primer kept for a second more strict matching later in the workflow). On downloading reads to the local compute infrastructure, the fidelity of the downloaded file is checked via a `md5sum` check. Md5s are either supplied by the sequencing center with the original download (fastq.gz.md5) or are provided separately.
 
 To check the quality of the sequencing run, [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is run on all fastq files (`~/path/to/FastQC/fastqc -o fastqc -t 10 *gz`). In addition for checking the run for a number of quality statistics, the "Per base sequence quality" is used to determine the best cutoff for the `dada_trimRight` (number of bases to trim from right or end of sequence) and `dada_trimLeft` (number of bases to trim from the left or start of sequence) parameters for the REVAMP configuration file.
 
@@ -291,12 +322,12 @@ To check the quality of the sequencing run, [FastQC](https://www.bioinformatics.
 
 [REVAMP](https://github.com/McAllister-NOAA/REVAMP) ([McAllister et al., 2023](https://doi.org/10.5670/oceanog.2023.231)) is a published metabarcoding pipeline that integrates several tools for read processing, amplicon sequence variant (ASV) assignment, taxonomic assignment, and basic data visualization. The front end of REVAMP, including read trimming and ASV assignment, is used for all markers to produce a consistent set of ASVs to work from for downstream analysis. Taxonomic assignment in REVAMP is also used for downstream analysis on all markers, though some have additional alternative taxonomic classification methods (detailed below).
 
-#### Stage and prepare data
+#### Stage and Prepare Data
 
-Usually, data comes from the sequencing facility with facility sample tags and sequencing lane tag information that is cumbersome for downstream processing. OME sorts our data for each sequencing run into marker specific folders, and renames to OME eDNA sample numbers (E numbers) for use in the REVAMP workflow and downstream metadata merging and analysis.
+Usually, data comes from the sequencing facility with facility sample tags and sequencing lane tag information that is cumbersome for downstream processing. OME sorts our data for each sequencing run into marker-specific folders, and renames them to OME eDNA sample numbers (E numbers) for use in the REVAMP workflow and downstream metadata merging and analysis.
 
 At a bare minimum, REVAMP requires as input:
- * [sample metadata file](https://github.com/McAllister-NOAA/REVAMP?tab=readme-ov-file#sample-metadata-file--s) with a `Sample` header, though it is useful for downstream figure generation to provide other information from controlled vocabulary (i.e. `controls`, `sites`, `replicates`, `lat`, `long`, `group1`, `group2`) or free text "chemistry" entries.
+ * [sample metadata file](https://github.com/McAllister-NOAA/REVAMP?tab=readme-ov-file#sample-metadata-file--s) with a `Sample` header, though it is useful for downstream figure generation to provide other information from controlled vocabulary (i.e., `controls`, `sites`, `replicates`, `lat`, `long`, `group1`, `group2`) or free text "chemistry" entries.
  * [pipeline configuration file](https://github.com/McAllister-NOAA/REVAMP?tab=readme-ov-file#pipeline-configuration-file--p) with the following controlled vocabulary:
       * `primerF`: IUPAC nucleotide code for forward primer
       * `primerR`: IUPAC nucleotide code for reverse primer
@@ -312,8 +343,8 @@ At a bare minimum, REVAMP requires as input:
       * `dada_maxEE1`: Maximum number of expected errors in forward read.
       * `dada_maxEE2`: Maximum number of expected errors in reverse read.
       * `dada_trimRight`: Number of bp to trim from the right of the reads. Highly variable and based on sequencing run quality. Check FastQC results.
-      * `dada_trimLeft`: Number of bp to trim from the left of the reads. Usually unnecessary (i.e. 0), but check FastQC results.
-      * `blastMode`: Either `allIN`, `mostEnvOUT`, or `allEnvOUT`, referring to entries in the nt database that are kepth or discarded when labelled with controlled unknown/unclassified vocabulary (see [ncbi_db_cleanup.sh](https://github.com/McAllister-NOAA/REVAMP/blob/main/ncbi_db_cleanup.sh)). Recommended: `mostEnvOUT`.
+      * `dada_trimLeft`: Number of bp to trim from the left of the reads. Usually unnecessary (i.e., 0), but check FastQC results.
+      * `blastMode`: Either `allIN`, `mostEnvOUT`, or `allEnvOUT`, referring to entries in the nt database that are kept or discarded when labelled with controlled unknown/unclassified vocabulary (see [ncbi_db_cleanup.sh](https://github.com/McAllister-NOAA/REVAMP/blob/main/ncbi_db_cleanup.sh)). Recommended: `mostEnvOUT`.
  * [figure configuration file](https://github.com/McAllister-NOAA/REVAMP?tab=readme-ov-file#figure-configuration-file--f):
     * See REVAMP readme. Not pertinent to bioinformatic processing.
 
@@ -344,16 +375,16 @@ Citation for the Rapid Exploration and Visualization through an Automated Metaba
 
 Modified from the REVAMP [workflow](https://github.com/McAllister-NOAA/REVAMP/tree/main?tab=readme-ov-file#revamp-workflow): 
 * ASVs are blasted against the NCBI `nt` database (BLASTn; `subject_besthit`; `max_target_seqs 4000`) ([Camacho et al., 2009](https://doi.org/10.1186/1471-2105-10-421)), exporting percent identity, length of hit, subject taxonomy IDs (taxIDs), and subject accession in tab-delimited format.
-* After the tab-delimited BLAST output file is created, the file is then reformatted to simplify the results to only include taxIDs from all best percent identity matches longer than a user-supplied query coverage cutoff (90% by length, in this case). Taxonomy assignment with REVAMP is intentionally conservative given: 1) the reference databases are incomplete for some taxa and heavily sampled for others, and 2) markers vary in their ability to resolve different taxa to species (e.g. [Gold et al., 2021](https://doi.org/10.1111/1755-0998.13450)).
+* After the tab-delimited BLAST output file is created, the file is then reformatted to simplify the results to only include taxIDs from all best percent identity matches longer than a user-supplied query coverage cutoff (90% by length, in this case). Taxonomy assignment with REVAMP is intentionally conservative given: 1) the reference databases are incomplete for some taxa and heavily sampled for others, and 2) markers vary in their ability to resolve different taxa to species (e.g., [Gold et al., 2021](https://doi.org/10.1111/1755-0998.13450)).
 * Before assessing taxonomies, TaxonKit (v 0.5.0) ([Shen and Ren, 2021](https://doi.org/10.1016/j.jgg.2021.03.006)) is run on all discovered taxIDs in the reformatted BLASTn file, with the results reformatted to include kingdom, phylum, class, order, family, genus, and species (`K/P/C/O/F/G/S`) assignments only.
 * In cases where an intermediate taxon is missing in this string, REVAMP will automatically fill from a lower taxonomy assignment: for example, a `K/P/-/O/F/G/S` string would be replaced with `K/P/O__c/O/F/G/S` to indicate that the class of interest contains the order below it.
-* In REVAMP, taxonomy is then assigned by merging the taxonomic hierarchy of all best BLASTn taxID hits to the lowest common ancestor (i.e. deepest identical taxonomic assignment). This means, for example, that if the best BLASTn hits match several species from the same genus, the ASV will only be identified to the genus level.
+* In REVAMP, taxonomy is then assigned by merging the taxonomic hierarchy of all best BLASTn taxID hits to the lowest common ancestor (i.e., deepest identical taxonomic assignment). This means, for example, that if the best BLASTn hits match several species from the same genus, the ASV will only be identified to the genus level.
 * The only other factor influencing the assignment is the confidence of the taxonomic depth as determined by percent identity cutoffs for each taxonomic level. While different clades vary widely in this respect ([Gebhardt and Knebelsberger, 2015](https://doi.org/10.1007/s10152-015-0434-7); [Zhang and Bu, 2022](https://doi.org/10.3390/insects13050425)), users can choose a set of taxonomic cutoffs per marker gene. For this marker, we use the recommended confidence cut offs for rRNA genes (97,95,90,80,70,60), which means that an ASV with best blast hit percent identity ≥97% can be assigned to the species level, 97%>x≥95% to genus, 95%>x≥90% to family, 90%>x≥80% to order, 80%>x≥70% to class, 70%>x≥60% to phylum, and <60% is assigned to unknown. Note that this confidence-based taxonomic trimming is completed after the last common ancestor analysis trimming.
-* Taxonomy is output as a tab-delimited file with one ASV per line followed by the seven levels of taxonomy assignment. Unassigned levels are designated as an `NA`.
+* Taxonomy is output as a tab-delimited file with one ASV per line, followed by the seven levels of taxonomy assignment. Unassigned levels are designated as an `NA`.
 * Summary:
    * BLAST-based best percent identity hit (over 90% query coverage by length)
    * Lowest common ancestor of all best hits
-   * Confidence thresholds set the possible depth of assignment based on percent identity quality of the hit
+   * Confidence thresholds set the possible depth of assignment based on the percent identity quality of the hit
    * Taxonomic assignments are based on the NCBI taxonomic hierarchy, simplified to seven levels only (`K/P/C/O/F/G/S`)
    * Results will change depending on the contents of the NCBI `nt` database, which is why the date of download should be noted
 
@@ -361,11 +392,11 @@ Modified from the REVAMP [workflow](https://github.com/McAllister-NOAA/REVAMP/tr
 
 Citation for the SILVAngs tool: [https://doi.org/10.1016/j.jbiotec.2017.06.1198](https://doi.org/10.1016/j.jbiotec.2017.06.1198). The tool is a web-based service found [here](https://ngs.arb-silva.de/silvangs/). Detailed description of the data processing pipeline is described in the [User Manual](https://www.arb-silva.de/fileadmin/silva_databases/sngs/SILVAngs_User_Guide.pdf). The [arb-silva](https://www.arb-silva.de/) team is well-known and trusted in the realm of microbial taxonomic classification and reference database management, having maintained a curated database of the small and large subunit ribosomal RNA genes for more than 30 years. The SILVAngs tool allows a user to submit sequences to be automatically classified against the curated SILVA taxonomy backbone to the genus level.
 
-A summary of the SILVAngs pipeline and OME use of it:
+A summary of the SILVAngs pipeline and OME's use of it:
 * The `ASVs.fa` amplicon sequence variant output from the REVAMP pipeline is submitted to the SILVAngs platform on a per sequencing run, per marker basis.
 * Default analysis settings are used with the exceptions: `sequence identity` set to `1` (these already represent ASVs, aka 100% operational taxonomic units).
-   * SILVAngs as run on default settings runs BLASTn against the SILVA database (release 138.2), and only assigns reads where the average of the percent identity and alignment coverage are greater than 93%. No common ancestor trimming is done due to the nature of the non-redundant curated database.
-* The project is excecuted by the SILVAngs pipeline and the result archive is downloaded.
+   * SILVAngs, as run on default settings, runs BLASTn against the SILVA database (release 138.2), and only assigns reads where the average of the percent identity and alignment coverage are greater than 93%. No common ancestor trimming is done due to the nature of the non-redundant curated database.
+* The project is executed by the SILVAngs pipeline, and the result archive is downloaded.
 * To create a similar data product to REVAMP, which includes ASV counts in a biom format and ASV taxonomy in a separate file, we then use REVAMP to reformat the SILVAngs output.
    * Note: Despite setting `sequence identity` set to `1`, there are still rare instances where multiple ASVs can be clustered together by the SILVAngs pipeline. REVAMP will look at the clustering file to copy the taxonomic assignment of the cluster reference to other ASVs in that cluster.
 * The original REVAMP output folder that was used to create the original ASV assignments is copied to a new location. Because of the checkpoint system in REVAMP, we can overwrite the original REVAMP taxonomy of this copied folder with the new SILVAngs taxonomy by:
@@ -374,15 +405,15 @@ A summary of the SILVAngs pipeline and OME use of it:
    * E.G. `revamp.sh -p Parada16S_REVAMP_out/config_file.txt -f Parada16S_REVAMP_out/figure_config_file.txt -s Parada16S_REVAMP_out/sample_metadata.txt -r . -o Parada16S_REVAMP_out -t 6 -y -g -e`
 * REVAMP will skip the BLASTn steps and instead prompt the user for the SILVAngs output and SILVA taxonomy files:
    * `Enter the location of the SILVAngs ssu or lsu results directory (i.e. ~/Downloads/results/ssu)`. This is simply the path to the results archive `ssu` folder.
-   * `Enter the location of the reference taxonomy map for current SILVA database: i.e. tax_slv_ssu_138.1.txt`. This file can be downloaded from arb-silva [here](https://www.arb-silva.de/current-release/Exports/taxonomy).
-* REVAMP will output the necessary ASV taxonomy file, based on the SILVA taxonomy hierarchy and simplify to seven levels only (`K/P/C/O/F/G/S`). Note: All species level assignments in this file are `NA`.
+   * `Enter the location of the reference taxonomy map for current SILVA database: i.e., tax_slv_ssu_138.1.txt`. This file can be downloaded from arb-silva [here](https://www.arb-silva.de/current-release/Exports/taxonomy).
+* REVAMP will output the necessary ASV taxonomy file, based on the SILVA taxonomy hierarchy, and simplifyit  to seven levels only (`K/P/C/O/F/G/S`). Note: All species-level assignments in this file are `NA`.
 
 ##### Troubleshooting
-There is a rare designation in the SILVAngs output that sets the taxonomy assignment to `silva||0|`. This entry does not exist in the silva taxonomy database, and is meant to indicate an unassigned/unknown hit. However, REVAMP cannot yet deal with this issue (user will see perl error `Use of uninitialized value`), and it is necessary to replace `silva||0|` with `Unknown` in the `results/ssu/exports/x---ssu---otus.csv` file. Note that the assignment `ncbi||0|` in the same line should also be replaced with `Unknown`.
+There is a rare designation in the SILVAngs output that sets the taxonomy assignment to `silva||0|`. This entry does not exist in the SILVA taxonomy database, and is meant to indicate an unassigned/unknown hit. However, REVAMP cannot yet deal with this issue (user will see perl error `Use of uninitialized value`), and it is necessary to replace `silva||0|` with `Unknown` in the `results/ssu/exports/x---ssu---otus.csv` file. Note that the assignment `ncbi||0|` in the same line should also be replaced with `Unknown`.
 
 #### `scikit-learn-silva`
 
-The `ASVs.fa` amplicon sequence variant output from the REVAMP pipeline 16Sv45 rRNA region is classified using [Qiime2 (v.2024.10)](https://qiime2.org/) (Bolyen et al., 2019) feature classifier's [naive bayesian classifier scikit-learn](https://scikit-learn.org/stable/modules/naive_bayes.html). Sci-kit learn classifiers is trained using the [silva (v138.1)](https://docs.qiime2.org/2022.11/data-resources/) for 16Sv4 rRNA (Quast et al., 2013). Each database is curated, extracted to the region of interest, and used to train a naive bayesian taxonomic classifier by:
+The `ASVs.fa` amplicon sequence variant output from the REVAMP pipeline 16Sv45 rRNA region is classified using [Qiime2 (v.2024.10)](https://qiime2.org/) (Bolyen et al., 2019) feature classifier's [naive bayesian classifier scikit-learn](https://scikit-learn.org/stable/modules/naive_bayes.html). Sci-kit learn classifiers is trained using the [silva (v138.1)](https://docs.qiime2.org/2022.11/data-resources/) for 16Sv4 rRNA (Quast et al., 2013). Each database is curated, extracted to the region of interest, and used to train a naive Bayesian taxonomic classifier by:
 
 1) Downloading the full-length silva (v138.1) taxonomy and sequences.
 ```
@@ -436,9 +467,9 @@ qiime feature-table tabulate-seqs \
   --o-visualization /home/poseidon/setta/ref_db/silva/silva_v138.1/silva_v138.99_v4_extracts-01.qzv
 ```
 
-*Note: Step 3 is repeated until ~50-70% query sequnces retained, with the `--o-extracted-sequence-segments` output file used in the `--i-reference-segment-sequences` input for the next iteration. After the first iteration, increase the `--p-perc-identity` to 0.9. For 16Sv4 region, only needed 1 iteration.*
+*Note: Step 3 is repeated until ~50-70% query sequnces retained, with the `--o-extracted-sequence-segments` output file used in the `--i-reference-segment-sequences` input for the next iteration. After the first iteration, increase the `--p-perc-identity` to 0.9. For the 16Sv4 region, only needed 1 iteration.*
 
-4) Filtering out taxonomies for sequences removed during extraction of full length database.
+4) Filtering out taxonomies for sequences removed during the extraction of full length database.
 ```
 # Get taxa that remain:
 qiime rescript filter-taxa \
@@ -499,17 +530,17 @@ qiime feature-classifier classify-sklearn \
    --p-n-jobs 4 \
    --o-classification 16Sv4_tax_silva_sklearn.qza
 
-# export taxonomy into tab delimited file
+# export taxonomy into tab-delimited file
 qiime tools export \
   --input-path 16Sv4_tax_silva_sklearn.qza \
   --output-path 16Sv4_tax_silva_sklearn
 ```
 
-Final output file is the taxonomy.tsv file within the 16Sv4_tax_silva_sklearn directory with `Feature ID` (ASVs), `Taxon` (taxonomy separated by semicolons), and `Confidence` (confidence score of the lowest taxonomic level). Silva taxonomy output includes 7 levels; domain, phylum, class, order, family, genus, species.
+The final output file is the taxonomy.tsv file within the 16Sv4_tax_silva_sklearn directory with `Feature ID` (ASVs), `Taxon` (taxonomy separated by semicolons), and `Confidence` (confidence score of the lowest taxonomic level). Silva taxonomy output includes 7 levels: domain, phylum, class, order, family, genus, species.
 
-#### Taxonomy choices
+#### Taxonomy Choices
 
-After running all of the above taxonomic classifiers, we still need a choice taxonomy to submit to Ocean DNA Explorer ([ODE](https://www.oceandnaexplorer.org/)) and Ocean Biodiversity Information System ([OBIS](https://obis.org/)). This choice differs between markers and is currently under investigation (Pers. comm. Sam Setta, Zack Gold, Sean McAllister). Once that choice is made, it then is crosswalked using [edna2obis](https://github.com/aomlomics/edna2obis) with the World Register of Marine Species ([WoRMS](https://www.marinespecies.org/)) and the OBIS and Global Biodiversity Information Facility ([GBIF](https://www.gbif.org/)) taxonomic backbones for submission. This field represents the best taxonomic assignment (given for the controlled Darwin core observation records) for each ASV, though independent assignments through the methods listed above are still kept as optional user fields. 
+After running all of the above taxonomic classifiers, we still need a choice taxonomy to submit to Ocean DNA Explorer ([ODE](https://www.oceandnaexplorer.org/)) and Ocean Biodiversity Information System ([OBIS](https://obis.org/)). This choice differs between markers and is currently under investigation (Pers. comm. Sam Setta, Zack Gold, Sean McAllister). Once that choice is made, it is then crosswalked using [edna2obis](https://github.com/aomlomics/edna2obis) with the World Register of Marine Species ([WoRMS](https://www.marinespecies.org/)) and the OBIS and Global Biodiversity Information Facility ([GBIF](https://www.gbif.org/)) taxonomic backbones for submission. This field represents the best taxonomic assignment (given for the controlled Darwin core observation records) for each ASV, though independent assignments through the methods listed above are still kept as optional user fields. 
 
 ### Data Decontamination and Quality Assurance Processing Workflow
 ![Sequencing-data-decontamination-and-quality-assurance (1)](https://github.com/user-attachments/assets/7a46aa0d-1247-4550-b19a-0989b80c4af4)
@@ -517,40 +548,40 @@ After running all of the above taxonomic classifiers, we still need a choice tax
 Unfiltered ASV tables output from any bioinformatics pipeline have the potential for a number of artefacts and issues that should be dealt with before providing those results to the public. OME has chosen to provide ASV tables at three stages of analysis: 
    1) unfiltered - The original ASV table with no additional filtering. Submitted to Ocean DNA Explorer ([ODE](https://www.oceandnaexplorer.org/)).
    2) filtered-trusted - An ASV table filtered to remove ASVs and samples with clear issues affecting their use in any context. Submitted to [ODE](https://www.oceandnaexplorer.org/) and Ocean Biodiversity Information System ([OBIS](https://obis.org/)).
-   3) filtered-analytic - Starting from the filtered-trusted ASV table, additional filtering is applied for a given more detailed analytic context. Submitted to [ODE](https://www.oceandnaexplorer.org/) and as part of a code repository on GitHub associated with a particular manuscript.
+   3) filtered-analytic - Starting from the filtered-trusted ASV table, additional filtering is applied for a given, more detailed analytic context. Submitted to [ODE](https://www.oceandnaexplorer.org/) and as part of a code repository on GitHub associated with a particular manuscript.
 
-The OME workflow for data decontamination and quality assurance is available [here](https://github.com/DiatomSetta/Sequencing-data-decontamination-and-quality-assurance/tree/main). In brackets below are the type of data being filtered, either ASVs or Samples.
+The OME workflow for data decontamination and quality assurance is available [here](https://github.com/DiatomSetta/Sequencing-data-decontamination-and-quality-assurance/tree/main). In brackets below are the types of data being filtered, either ASVs or Samples.
 
 **Part 1 – Sequencing Run-Based Filtering**
 
-**Step 1 – Filter read type** 
+**Step 1 – Filter Read Type** 
 
-By default, REVAMP only produces ASV tables from merged forward and reverse reads. However, some pipelines product multiple datasets from single end and merged reads (e.g. [Anacapa](https://github.com/limey-bean/Anacapa)), and this step allows the user to filter those read types depending on use. Merged reads are more accurate, and OME primarily focuses on that result. However, there are applications of single end ASVs, including 1) instances where amplicons are larger and provide no overlap of the forward and reverse reads. This is the case for Eukaryota with the `ssu16sv4v5_parada` assay for instance. 2) Failed sequencing runs where only one read (forward or reverse) was successful.
+By default, REVAMP only produces ASV tables from merged forward and reverse reads. However, some pipelines produce multiple datasets from single-end and merged reads (e.g., [Anacapa](https://github.com/limey-bean/Anacapa)), and this step allows the user to filter those read types depending on use. Merged reads are more accurate, and OME primarily focuses on that result. However, there are applications of single-end ASVs, including 1) instances where amplicons are larger and provide no overlap of the forward and reverse reads. This is the case for Eukaryota with the `ssu16sv4v5_parada` assay, for instance. 2) Failed sequencing runs where only one read (forward or reverse) was successful.
 
-**Step 2 – Filter tag-jumping [ASV]**
+**Step 2 – Filter Tag-jumping [ASV]**
 
 If the sequencing run includes a high-quality positive control, that control can be used to estimate the occurrence of tag-jumping or index hopping. The ASV(s) associated with the positive control sample are first identified, after which the maximum relative proportion of environmental reads jumping into the positive control is calculated as maximum vector contamination. Next, that maximum contamination proportion is subtracted from each ASV's total read count.
 
-**Step 3 – Filter negative control contaminants [ASV]**
+**Step 3 – Filter Negative Control Contaminants [ASV]**
 
-If a sequencing run has negative controls sequenced, those negative controls can be used to remove contaminants. It is important to consider the source of the negative control, so that the filtering can be applied appropriately to each sample. For example, OME collects and sequences negative controls throughout cruises (field blanks) and during extraction (extraction blanks). Depending on which samples each of these negative controls is associated with, the clearance of contaminating sequences may not apply to all samples on a sequencing run evenly. For those samples that negative controls do apply to, OME filters using two strategies: 1) wholesale removal of the impacted ASV, or 2) partial removal.
+If a sequencing run has negative controls sequenced, those negative controls can be used to remove contaminants. It is important to consider the source of the negative control so that the filtering can be applied appropriately to each sample. For example, OME collects and sequences negative controls throughout cruises (field blanks) and during extraction (extraction blanks). Depending on which samples each of these negative controls is associated with, the clearance of contaminating sequences may not apply to all samples on a sequencing run evenly. For those samples that negative controls do apply to, OME filters using two strategies: 1) wholesale removal of the impacted ASV, or 2) partial removal.
 
 For the partial removal, ASVs found in the negative control are slated for removal if the following conditions are met:
    1) ASV occurs in less than 10 samples.
    2) ASV does not occur as an abundant (≥10% per sample max occurrence) ASV in any sample.
-   3) ASV abundance is outside a 95% confidence interval for a normal distribution from mean total reads and less than the total sum of reads in the negative control.
+   3) ASV abundance is outside a 95% confidence interval for a normal distribution from the mean total reads and less than the total sum of reads in the negative control.
 
 Both approaches are valid. OME primarily uses the partial removal approach, since there is a high likelihood that an abundant ASV from real environmental samples might tag jump into the negative control. If it isn't fully removed during Step 2, then this would lead to the removal of an ecologically important ASV from the dataframe.
 
 TBD - check wording.
 
-**Step 4 – Remove positive and negative control samples [Sample]**
+**Step 4 – Remove Positive and Negative Control Samples [Sample]**
 
 After they are used in steps 2 and 3, the positive and negative control samples can be removed from the dataset.
 
-**Step 5 – Remove known contaminants and off-targets [ASV]**
+**Step 5 – Remove Known Contaminants and Off-targets [ASV]**
 
-There are a number of typical contaminants that may make their way into environmental samples, particularly for low DNA applications of eDNA metabarcoding. These can include DNA from the humans processing the samples, food items (particularly meats), pets (dogs, cats, etc.), and lab controls (gblocks for positive controls, positive controls from other experiments). In addition, some markers were "designed" to target particular taxa, but may in fact amplify other organisms that were not originally intended as the target. This step allows users to designate known contaminants and off-targets to remove them from the data.
+There are several typical contaminants that may make their way into environmental samples, particularly for low DNA applications of eDNA metabarcoding. These can include DNA from the humans processing the samples, food items (particularly meats), pets (dogs, cats, etc.), and lab controls (gblocks for positive controls, positive controls from other experiments). In addition, some markers were "designed" to target particular taxa, but may in fact amplify other organisms that were not originally intended as the target. This step allows users to designate known contaminants and off-targets to remove them from the data.
 
 Users can supply a list of typical lab contaminant taxonomies (one per line), which should include the potential for incomplete taxonomic assignment of the contaminant in the current dataset. Users can also supply the sequence of contaminants for direct removal of matching ASVs (independent of taxonomy). This latter is useful for removing the sequences of synthetic controls, which may or may not be assigned to the appropriate taxonomy in a traditional workflow.
 
@@ -580,31 +611,31 @@ OME known contaminant list:
 * Eukaryota;Chordata;Mammalia;Carnivora;Mustelidae;Mustela;Mustela putorius #Ferret gDNA positive control ssu16sv4v5_parada_OSUmod & ssu18sv8_machida_OSUmod
 * ```GAGCGGAGAGATAACTATAATGCTGCTTATAATCTCTCTGTCGTTGCTAACGTTTATAGTCTAGTCTCATTATAATTGTATGCTATTGAGGCATTGATTAATACTGGAAAACATTTGAAATAAACTAATTTATACGACAGAAATCGTGTACCTACTAAATCTCTTTAATGTAAGTTCTGACTAATTCGTACTTTGTTAAGAACTTACATTTTAATAATAGAGGATATATGTTTTATTTTTATGATCTATTGATGTTCTTAAGACTGCAATTTATATAATGAGGTAATATTTGCGGTAAATCCTAGTGCAATGGCAATTTTTTACTTTTGTTCTAAAGAAGAGATAACGTGAGTGCAGTTATCATTAATGTAGAAATTGGAAAGATTCTTGGGCCTCCACCTTTAGATAGTGTTTACTCTTTTATAAAGGAGCTATTAATTATGTCTTGCGAAGATTCAAAAAGGTAAGTCAATTTGGCTGATTCGAAAAGACGGACTTCAAAGTTACCTAACAATAGTTGTGGGTCCGTAACAAAATCTTTTTAATAAGTCTCCGTAAGTGTTGGTTGAATAGCCCTGATCGGTTTAACCAGAAGTTCAAATATATTATTTTATGATTTTTGAGTCAGAATGTGTTACCTTACAGAAATTAAGATCG``` #Random 32% GC sequence gblock positive control COI_Folmer
 
-Off targets are specified by taxonomy or ASV length. For example, ssu12sv5v6_mifish_u_sales has a known bacterial off-target greater than 210 bp. For the MiFish assay, off targets can be removed by size selection (e.g. keep <210 bp) or taxonomy (e.g. keep Eukaryota).
+Off-targets are specified by taxonomy or ASV length. For example, ssu12sv5v6_mifish_u_sales has a known bacterial off-target greater than 210 bp. For the MiFish assay, off-targets can be removed by size selection (e.g., keep <210 bp) or taxonomy (e.g., keep Eukaryota).
 
-**Part 2 – Merging datasets**
+**Part 2 – Merging Datasets**
 
-Data from a single project may end up on multiple sequencing runs. This part of the workflow allows us to combine multiple runs to make a single project-based dataset. ASVs with identical sequences are merged, new count tables generated, and conflicting taxonomies identified and sorted.
+Data from a single project may end up on multiple sequencing runs. This part of the workflow allows us to combine multiple runs to make a single project-based dataset. ASVs with identical sequences are merged, new count tables generated, and conflicting taxonomiesare  identified and sorted.
 
-**Part 3 – Depth, diversity, replicate filtering**
+**Part 3 – Depth, Diversity, Replicate Filtering**
 
-**Step 6 – Remove extreme low sequencing depth samples [Sample]**
+**Step 6 – Remove Extreme Low Sequencing Depth Samples [Sample]**
 
-Remove any sample with less than 1,000 total reads. These samples are likely poorly sequenced and the data is not a good representation of the environment.
+Remove any sample with fewer than 1,000 total reads. These samples are likely poorly sequenced, and the data are not a good representation of the environment.
 
-**Step 7 – Remove extreme low diversity samples [Sample]**
+**Step 7 – Remove Extremely Low Diversity Samples [Sample]**
 
-Remove any sample that contains a single ASV with >99% of the reads mapping to it. This situation is unlikely in the environment, and likely indicates a problematic sample.
+Remove any sample that contains a single ASV with >99% of the reads mapping to it. This situation is unlikely in the environment and likely indicates a problematic sample.
 
-**Step 8 – Dissimilarity between replicates [Sample]**
+**Step 8 – Dissimilarity Between Replicates [Sample]**
 
-For this analysis, sample relationships are graphed in ordination space and a centroid calculated for any pair of replicates. If a sample within a group of replicates has a distance to that centroid greater than a maximum distance cut off (TBD), then it is removed from the dataset.
+For this analysis, sample relationships are graphed in ordination space, and a centroid is calculated for any pair of replicates. If a sample within a group of replicates has a distance to that centroid greater than a maximum distance cut off (TBD), then it is removed from the dataset.
 
 **Filtered-Trusted Dataset**
 
-At this point in the workflow the filtered-trusted dataset is peeled off for submission to [ODE](https://www.oceandnaexplorer.org/) and [OBIS](https://obis.org/).
+At this point in the workflow, the filtered-trusted dataset is peeled off for submission to [ODE](https://www.oceandnaexplorer.org/) and [OBIS](https://obis.org/).
 
-**Part 4 – Final analytic filtering and optional steps**
+**Part 4 – Final Analytic Filtering And Optional Steps**
 
 **Step 9 – Remove Singletons [ASV]**
 
@@ -616,17 +647,17 @@ Remove any ASV that is only found in one sample in the dataset (or user-set samp
 
 **Step 11 – Remove n-tons [ASV]**
 
-The default for this step is to skip this filtering, though a user can set any total read count cut off for removing ASVs from the dataset.
+The default for this step is to skip this filtering, though a user can set any total read count cutoff for removing ASVs from the dataset.
 
-**Step 12 – Remove low diversity samples [Sample]**
+**Step 12 – Remove Low Diversity Samples [Sample]**
 
 The default for this step is to skip this filtering, though a user can set any cutoff to eliminate samples that are majority dominated by a single species (x%).
 
-**Step 13 – Remove ASVs assigned to Unknowns [ASV]**
+**Step 13 – Remove ASVs Assigned to Unknowns [ASV]**
 
 Remove any ASV assigned to a list of taxa strings that are associated with Unknown assignments. For REVAMP: `Unknown;NA;NA;NA;NA;NA;NA` or `Environmental Unknown;NA;NA;NA;NA;NA;NA`.
 
-**Step 14 – Remove low sequencing depth samples [Sample]**
+**Step 14 – Remove Low Sequencing Depth Samples [Sample]**
 
 The default for this step is 10,000 reads. A user can supply any cutoff for removing samples based on their total read count/depth.
 
@@ -634,76 +665,35 @@ The default for this step is 10,000 reads. A user can supply any cutoff for remo
 
 After filtering, which can be more or less stringent depending on needs, the analytic dataset is ready for submission to [ODE](https://www.oceandnaexplorer.org/) or for analysis for a manuscript. The final dataset and filtering choices will be supplied with the manuscript-specific GitHub code repository.
    
-### Data and metadata submission strategy
+### Data and Metadata Submission Strategy
 
 The OME datamanagement plan includes submission of all data to three distinct repositories:
 
 1) Raw reads are submitted to NCBI's sequence read archive (SRA)
-2) Unfiltered ASV tables and taxonomy assignments are submitted to [ODE](https://www.oceandnaexplorer.org/) and manuscript-specific code repository.
+2) Unfiltered ASV tables and taxonomy assignments are submitted to [ODE](https://www.oceandnaexplorer.org/) and a manuscript-specific code repository.
 3) Filtered-Trusted ASV tables and taxonomy assignments are submitted to [ODE](https://www.oceandnaexplorer.org/) and [OBIS](https://obis.org/).
-4) Filtered-Analysic ASV tables and taxonomy assignments are submitte to [ODE](https://www.oceandnaexplorer.org/) and manuscript-specific code repository.
+4) Filtered-Analysic ASV tables and taxonomy assignments are submitted to [ODE](https://www.oceandnaexplorer.org/) and the manuscript-specific code repository.
 5) Sample metadata are submitted with raw read records to NCBI's SRA, to ODE and OBIS through FAIR eDNA terms mapped to Darwin core controlled vocabulary, through the manuscript-specific code repository, and through an archive with NCEI.
 
 ### Marker-specific recommendations – ssu16sv4v5_parada / Universal-16S-V4V5-Parada
 
 TBD
 
-# PERSONNEL REQUIRED
+## GUIDE TO ARCHIVED METHODOLOGY
 
-Insert the number of technicians, data managers, and scientists required for the good execution of the procedure
+The contents of this archive should allow your analysis to be reproduced exactly as you intended it. This document provides guidance on the contents of each partner's compressed archive of in-silico methods. This document should be part of that same archive, serving as an extended README. Below, please find guidance on what this archive should include. When describing the contents of the archive, please give precise file names and relative paths to the files.
 
-## Safety
-
-Identify hazards associated with the procedure and specify protective equipment and safety training required to safely execute the procedure
-
-## Training requirements
-
-Specify technical training required for the good execution of the procedure.
-
-## Time needed to execute the procedure
-
-Specify how much time is necessary to execute the procedure.
-
-# EQUIPMENT, SOFTWARE & PACKAGES
-
-
-| NAME | VERSION OR MODEL | MANUFACTURER OR CREATOR | REMARKS |
-| ------------- | ------------- | ------------- | ------------- |
-| Equipment |
-| e.g. Laptop | Content Cell | Content Cell | e.g. needs at least 16 GB of RAM |
-| Content Cell | Content Cell | Content Cell | Content Cell |
-| Software |
-| Content Cell | Content Cell | Content Cell | Content Cell |
-| Content Cell | Content Cell | Content Cell | Content Cell |
-| Code |
-| Please include the links to the code you used for this analysis |
-| e.g. link to the released version of a github repository  | Content Cell | Content Cell | Content Cell |
-| Content Cell | Content Cell | Content Cell | Content Cell |
-
-# GUIDE TO ARCHIVED METHODOLOGY
-
-The contents of this archive should allow your analysis to be reproduced exactly as you intended it.
-
-This document provides guidance on the contents of each partner's compressed archive of in-silico methods. This document should be part of that same archive, serving as an extended README.
-
-Below, please find guidance on what this archive should include. When describing the contents of the archive, please give precise file names and relative paths to the files.
-
-
-
-
-# Archive content
+### Archive Content
 
 To reproduce the in-silico analysis, please provide one of the following (in order of decreasing preference)
 
 1. Jupyter, R notebook(s) or equivalents
-
-2. Downloaded archive of (the released version of) your github repository
-
+2. Downloaded an archive of (the released version of) your GitHub repository
 3. Individual scripts
 
 In each of the above cases, guidance and documentation for all the steps you took to perform the in-silico analysis should be included. In case 1., code and documentation are integrated. In cases 2. and 3., in-line comments may be provided, however, these are not generally sufficient as documentation. In those cases, please provide a step-by-step protocol on how and when to run each script in the Execution Procedure section below.
 
-Please include a script on **data acquisition** (e.g. documentation and code to pull sequences from INSDC, access sequences on an institutional FTP server, download metadata files, check file integrity via md5 checksum). Please add sufficient detail, so that the partners only have to install the software, run this script and will then have all the data needed to perform any analysis described below.
+Please include a script on **data acquisition** (e.g., documentation and code to pull sequences from INSDC, access sequences on an institutional FTP server, download metadata files, check file integrity via md5 checksum). Please add sufficient detail, so that the partners only have to install the software, run this script and will then have all the data needed to perform any analysis described below.
 
 ### Code
 Here please describe each file containing code, including its purpose, its input, its output. Please provide the names and the relative paths to this documentation.
@@ -717,21 +707,20 @@ Please provide link(s) to the files containing metadata about your sequence data
 Auxiliary files
 e.g. mapping files, test/dummy files, colour palette
 
-
 ## Execution Procedure
 
 Please fill out this section if you have not already documented it as part of your R, Jupyter, or similar notebook. In this section, please provide a step-by-step guidance on how and when to run each component of your code.
 
-## Quality control
+## Quality Control
 
 In this section please include the names and paths that can be used to validate that operations were successful. If such checks were done during the execution procedures, please note this here. We recommend identifying such steps with in-line tags (e.g. “#QC”).
 
-## Basic troubleshooting guide
+### Basic Troubleshooting Guide
 
 Identify known issues associated with the procedure, if any.
 Provide troubleshooting guidelines when available.
 
-# REFERENCES
+## REFERENCES
 
 Bolyen, E., Rideout, J.R., Dillon, M.R. et al. Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nat Biotechnol 37, 852–857 (2019). [https://doi.org/10.1038/s41587-019-0209-9](https://doi.org/10.1038/s41587-019-0209-9)
 
@@ -746,7 +735,5 @@ DADA2 Callahan et al., 2016
 Cutadapt (Martin, 2011)
 
 REVAMP ([McAllister et al., 2023]
-
-# APPENDIX A: DATASHEETS
 
 Link to any documents such as software guidelines, images, etc that support this protocol. Please include a short note describing the document's relevance.
