@@ -34,14 +34,11 @@ pcr_primer_forward: GTGYCAGCMGCCGCGGTAA
 pcr_primer_reverse: CCGYCAATTYMTTTRAGTTT
 trim_method: 'Cutadapt, primer trimming | DADA2, filterAndTrim (quality and length trimming)'
 trim_param:
-   - Cutadapt:
-      default: '-a "GTGYCAGCMGCCGCGGTAA;required...TTACCGCGGCKGCTGRCAC;optional", -A "CCGYCAATTYMTTTRAGTTT;required...AAACTYAAAKRAATTGRCGG;optional", --discard-untrimmed, -m 1'
-   - DADA2:
-      default: 'trunQ = {dada_trunQ}, trimRight = {dada_trimRight}, trimLeft = {dada_trimLeft}'
-      source_file: REVAMP_config
-      source_term: 'dada_trunQ | dada_trimRight | dada_trimLeft'
+   default: 'Cutadapt, -a "GTGYCAGCMGCCGCGGTAA;required...TTACCGCGGCKGCTGRCAC;optional", -A "CCGYCAATTYMTTTRAGTTT;required...AAACTYAAAKRAATTGRCGG;optional", --discard-untrimmed, -m 1 | DADA2, trunQ = {dada_trunQ}, trimRight = {dada_trimRight}, trimLeft = {dada_trimLeft}'
+   source_file: REVAMP_config
+   source_term: 'dada_trunQ | dada_trimRight | dada_trimLeft'
 demux_tool: 'pheniqs v2.1.0 | Cutadapt v3.4'
-demux_max_mismatch: '0 | 0.3'
+demux_max_mismatch: 'pheniqs 0 | Cutadapt 0.3'
 merge_tool: 'DADA2, mergePairs'
 merge_min_overlap: 20
 min_len_cutoff:
