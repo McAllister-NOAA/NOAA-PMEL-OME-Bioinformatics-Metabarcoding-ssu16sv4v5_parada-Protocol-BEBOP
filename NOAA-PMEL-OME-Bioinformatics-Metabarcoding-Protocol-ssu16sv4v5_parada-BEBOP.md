@@ -1,5 +1,5 @@
 ---
-# MIOP terms
+# MIOP terms (applicable to all)
 methodology category: Omics Analysis
 project: NOAA Pacific Marine Environmental Laboratory Ocean Molecular Ecology Group protocols
 purpose: 'taxonomic diversity assessment by targeted gene survey [OBI:0001960]'
@@ -10,7 +10,6 @@ broad-scale environmental context: 'marine biome [ENVO:00000447] | oceanic epipe
 local environmental context: 
    options: 'marine photic zone [ENVO:00000209] | marine aphotic zone [ENVO:00000210] | marine benthic biome [ENVO:01000024]'
 environmental medium: 'ocean water [ENVO:00002149] | sea water [ENVO:00002149]'
-target: 'Bacterial 16S RNA [NCIT:C105370]'
 creator: Samantha Setta, Sean McAllister, Zachary Gold
 materials required: high-performance computing resources
 skills required: basic bash, R
@@ -24,14 +23,9 @@ hasVersion: 1
 license: 'CC0 1.0 Universal'
 maturity level: demonstrated
 
-# FAIRe terms
+# FAIRe terms (applicable to all)
 sop_bioinformatics: TBD_this_DOI (paste link when published)
 checkls_ver: TBD_bioinformatics_template
-assay_name:
-   - ssu16sv4v5_parada
-   - ssu16sv4v5_parada_OSUmod
-pcr_primer_forward: GTGYCAGCMGCCGCGGTAA
-pcr_primer_reverse: CCGYCAATTYMTTTRAGTTT
 trim_method: 'Cutadapt, primer trimming | DADA2, filterAndTrim (quality and length trimming)'
 trim_param:
    default: 'Cutadapt, -a "GTGYCAGCMGCCGCGGTAA;required...TTACCGCGGCKGCTGRCAC;optional", -A "CCGYCAATTYMTTTRAGTTT;required...AAACTYAAAKRAATTGRCGG;optional", --discard-untrimmed, -m 1 | DADA2, trunQ = {dada_trunQ}, trimRight = {dada_trimRight}, trimLeft = {dada_trimLeft}'
@@ -56,90 +50,14 @@ chimera_check_method: 'DADA2, removeBimeraDenovo, consensus'
 chimera_check_param: not applicable
 otu_clust_tool: 'DADA2, pool="pseudo"'
 otu_clust_cutoff: 100
-min_reads_cutoff: 
-   default: 2
-   options: 'unfiltered = 1 | filtered-trusted = 1 | filtered-analytic >= 2'
-   source_file: decontam_workflow_config
-   source_term: TBD (n_ton_removal)
 min_reads_cutoff_unit: reads
 min_reads_tool: 'DADA2 | decontam_workflow'
-otu_db:
-   - REVAMP:
-      default: NCBI GenBank nt database, downloaded {nt_database_version}'
-      source_file: REVAMP_config
-      source_term: nt_database_version
-   - SILVAngs:
-      default: 'non-redundant SILVA SSU ref dataset, release {silva_db_release}'
-      source_file: REVAMP_config
-      source_term: silva_db_release
-   - scikit-learn-silva:
-      default: 'TBD'
-      source_file: TBD
-      source_term: TBD
-otu_db_custom: not applicable
-tax_assign_cat:
-   - REVAMP:
-      default: sequence similarity
-   - SILVAngs:
-      default: sequence similarity
-   - scikit-learn-silva:
-      default: probabilistic
-otu_seq_comp_appr:
-   - REVAMP:
-      default: blastn >2.14.1+
-   - SILVAngs:
-      default: blastn 2.11.0+
-   - scikit-learn-silva:
-      default: 'no alignment, k-mer based'
-tax_class_id_cutoff:
-   - REVAMP:
-      default: 60
-      options: 'species = 97 | genus = 95 | family = 90 | order = 80 | class = 70 | phylum = 60'
-      source_file: REVAMP_config
-      source_term: taxonomyConfidenceCutoffs
-   - SILVAngs:
-      default: 86
-   - scikit-learn-silva:
-      default: not applicable
-tax_class_query_cutoff:
-   - REVAMP:
-      default: 90
-      source_file: REVAMP_config
-      source_term: blastQueryCovCutoff
-   - SILVAngs:
-      default: 86
-   - scikit-learn-silva:
-      default: not applicable
-tax_class_collapse:
-   - REVAMP:
-      default: 'Taxonomic levels were dropped to the lowest common ancestor (LCA), and were further dropped depending on % identity thresholds ({taxonomyConfidenceCutoffs}, see REVAMP readme).'
-      source_file: REVAMP_config
-      source_term: taxonomyConfidenceCutoffs
-   - SILVAngs:
-      default: 'No taxonomic levels are dropped from best BLAST hit matches due to high quality comprehensive nature of the reference dataset and taxonomy.'
-   - scikit-learn-silva:
-      default: TBD check - 'Starting at the highest level, the software checks % confidence against a set threshold. Once the confidence drops below that threshold, everything beyond that level is unassigned.'
-tax_class_other: not applicable
 screen_geograph_method: not applicable
-screen_contam_0_1:
-   - unfiltered:
-      default: 0
-   - filtered-trusted:
-      default: 1
-   - filtered-analytic:
-      default: 1
-screen_contam_method: 'TBD check - 1) The composition of the positive control is used to estimate a maximum vector contamination, which is then subtracted proportionally from all ASVs in the run to remove background tag jumping. 2) Next negative control contaminants are removed either as a wholesale removal of the impacted ASV, or as a partial removal. 3) ASVs assigned to common contaminants are removed: human, food products, pets, common lab/consumable contaminants, laboratory controls.'
-screen_nontarget_method: 'TBD check - 1) Contaminanting off-target organisms were removed as described in screen_contam_method, removing common contaminants including human, food products, pets, common lab/consumable contaminants, laboratory controls.'
-screen_other:
-   - filtered-trusted:
-      default: 'TBD check - In addition to the screening in screen_contam_method and screen_nontarget_method: 1) Remove positive and negative control samples. 2) Extreme low read depth sample removal. 3) Extreme low diversity sample removal (>99.9% of reads in one ASV). 4) Sample removal due to replicate dissimilarity distance from centroid above threshold.'
-   - filtered-analytic:
-      default: 'TBD check - In addition to the screening in screen_contam_method and screen_nontarget_method: 1) Remove positive and negative control samples. 2) Extreme low read depth sample removal. 3) Extreme low diversity sample removal (>99.9% of reads in one ASV). 4) Sample removal due to replicate dissimilarity distance from centroid above threshold. 5) Removal of singleton ASVs. 6) Removal of ASVs found in only one sample (no pattern of presence). Optional: 7) Remove n-ton ASVs (ASVs w/ less than n reads). 8) Low diversity sample removal. 9) Removal of unknown ASVs. 10) Low read depth sample removal. Exact application indicated in manuscript and manuscript code repository.'
 otu_raw_description: 'No filtering outside of DADA2 default ASV denoising'
 otu_final_description: this_DOI (link to decontamination screening section)
 bioinfo_method_additional: this_DOI (paste link when published)
 
-# NOAA PMEL Ocean Molecular Ecology terms
+# NOAA PMEL Ocean Molecular Ecology terms (applicable to all)
 asv_method: 
    default: dada2pe
    options: dada2pe | dada2se
@@ -178,7 +96,228 @@ dada2_n_reads_learn:
    calculation: '{systemmemoryMB}*0.7*450000'
    source_file: REVAMP_config
    source_term: systemmemoryMB
+
+# Assay Section
+assay_name:
+   COI_1835-2198_lerayfolmer:
+      target: 'Cytochrome C Oxidase Subunit 1 [NCIT:C128943]' #MIOP Term
+      pcr_primer_forward: GGWACWGGWTGAACWGTWTAYCCYCC
+      pcr_primer_reverse: TAAACTTCAGGGTGACCAAAAAATCA
+      taxonomy_method_list:
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+   ITS1_sterling:
+      target: 'internal transcribed spacer region [SO:0000639]' #MIOP Term
+      pcr_primer_forward: TCCGTAGGTGAACCTGCGG
+      pcr_primer_reverse: CATCCACCGCTGAAAGTTGTAA
+      taxonomy_method_list: 
+         - REVAMP
+         - scikit-learn-ITS1
+      preferred_taxonomy_method: TBD
+   lsu16s_2434-2571_kelly:
+      target: '16S Mitochondrial Ribosomal RNA [NCIT:C131261]' #MIOP Term
+      pcr_primer_forward: AGTTACYYTAGGGATAACAGCG
+      pcr_primer_reverse: CCGGTCTGAACTCAGATCAYGT
+      taxonomy_method_list: 
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+   ssu12sv5v6_mifish_u_sales:
+      target: '12S Mitochondrial Ribosomal RNA [NCIT:C128263]' #MIOP Term
+      pcr_primer_forward: GCCGGTAAAACTCGTGCCAGC
+      pcr_primer_reverse: CATAGTGGGGTATCTAATCCCAGTTTG
+      taxonomy_method_list: 
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+   ssu12sv5v6_mifish_u_sales_2xRSA:
+      target: '12S Mitochondrial Ribosomal RNA [NCIT:C128263]' #MIOP Term
+      pcr_primer_forward: GCCGGTAAAACTCGTGCCAGC
+      pcr_primer_reverse: CATAGTGGGGTATCTAATCCCAGTTTG
+      taxonomy_method_list: 
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+   ssu16sv4v5_parada:
+      target: 'Bacterial 16S RNA [NCIT:C105370]' #MIOP Term
+      pcr_primer_forward: GTGYCAGCMGCCGCGGTAA
+      pcr_primer_reverse: CCGYCAATTYMTTTRAGTTT
+      taxonomy_method_list:
+         - REVAMP
+         - SILVAngs
+         - scikit-learn-silva
+      preferred_taxonomy_method: TBD
+   ssu16sv4v5_parada_OSUmod:
+      target: 'Bacterial 16S RNA [NCIT:C105370]' #MIOP Term
+      pcr_primer_forward: GTGYCAGCMGCCGCGGTAA
+      pcr_primer_reverse: CCGYCAATTYMTTTRAGTTT
+      taxonomy_method_list:
+         - REVAMP
+         - SILVAngs
+         - scikit-learn-silva
+      preferred_taxonomy_method: TBD
+   ssu18sv4_stoeck:
+      target: '18S Ribosomal RNA [NCIT:C48172]' #MIOP Term
+      pcr_primer_forward: CCAGCASCYGCGGTAATTCC
+      pcr_primer_reverse: ACTTTCGTTCTTGATYR
+      taxonomy_method_list: 
+         - REVAMP
+         - scikit-learn-PR2
+      preferred_taxonomy_method: TBD
+   ssu18sv8_machida:
+      target: '18S Ribosomal RNA [NCIT:C48172]' #MIOP Term
+      pcr_primer_forward: GYGGTGCATGGCCGTTSKTRGTT
+      pcr_primer_reverse: GTGTGYACAAAGGBCAGGGAC
+      taxonomy_method_list: 
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+   ssu18sv8_machida_OSUmod:
+      target: '18S Ribosomal RNA [NCIT:C48172]' #MIOP Term
+      pcr_primer_forward: GYGGTGCATGGCCGTTSKTRGTT
+      pcr_primer_reverse: GTGTGYACAAAGGBCAGGGAC
+      taxonomy_method_list: 
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+   ssu18sv9_amaralzettler:
+      target: '18S Ribosomal RNA [NCIT:C48172]' #MIOP Term
+      pcr_primer_forward: TTGTACACACCGCCC
+      pcr_primer_reverse: CCTTCYGCAGGTTCACCTAC
+      taxonomy_method_list: 
+         - REVAMP
+         - scikit-learn-PR2
+      preferred_taxonomy_method: TBD
+   lsu16s_2051-2438_mideca_komai:
+      target: '16S Mitochondrial Ribosomal RNA [NCIT:C131261]' #MIOP Term
+      pcr_primer_forward: GGACGATAAGACCCTATAAA
+      pcr_primer_reverse: ACGCTGTTATCCCTAAAGT
+      taxonomy_method_list: 
+         - REVAMP
+         - Anacapa #BLCA
+      preferred_taxonomy_method: TBD
+
+# Taxonomy Assignment Section
+taxonomy_method:
+   REVAMP:
+      otu_db:
+         default: NCBI GenBank nt database, downloaded {nt_database_version}'
+         source_file: REVAMP_config
+         source_term: nt_database_version
+      otu_db_custom: not applicable
+      tax_assign_cat: sequence similarity
+      otu_seq_comp_appr:
+         default: blastn >2.14.1+
+      tax_class_id_cutoff:
+         default: 60
+         options: 'species = 97 | genus = 95 | family = 90 | order = 80 | class = 70 | phylum = 60'
+         source_file: REVAMP_config
+         source_term: taxonomyConfidenceCutoffs
+      tax_class_query_cutoff:
+         default: 90
+         source_file: REVAMP_config
+         source_term: blastQueryCovCutoff
+      tax_class_collapse:
+         default: 'Taxonomic levels were dropped to the lowest common ancestor (LCA), and were further dropped depending on % identity thresholds ({taxonomyConfidenceCutoffs}, see REVAMP readme).'
+         source_file: REVAMP_config
+         source_term: taxonomyConfidenceCutoffs
+      tax_class_other: not applicable
+
+   SILVAngs:
+      otu_db:
+         default: 'non-redundant SILVA SSU ref dataset, release {silva_db_release}'
+         source_file: REVAMP_config
+         source_term: silva_db_release
+      otu_db_custom: not applicable
+      tax_assign_cat: sequence similarity
+      otu_seq_comp_appr:
+         default: blastn 2.11.0+
+      tax_class_id_cutoff:
+         default: 86
+      tax_class_query_cutoff:
+         default: 86
+      tax_class_collapse:
+         default: 'No taxonomic levels are dropped from best BLAST hit matches due to high quality comprehensive nature of the reference dataset and taxonomy.'
+      tax_class_other: not applicable
+      
+   scikit-learn-silva:
+      otu_db:
+         default: 'TBD'
+         source_file: TBD
+         source_term: TBD
+      otu_db_custom: not applicable
+      tax_assign_cat: probabilistic
+      otu_seq_comp_appr: 'no alignment, k-mer based'
+      tax_class_id_cutoff: not applicable
+      tax_class_query_cutoff: not applicable
+      tax_class_collapse:
+         default: 'TBD check - Starting at the highest level, the software checks % confidence against a set threshold. Once the confidence drops below that threshold, everything beyond that level is unassigned.'
+      tax_class_other: not applicable
+
+   scikit-learn-ITS1:
+      otu_db:
+         default: 'TBD'
+         source_file: TBD
+         source_term: TBD
+      otu_db_custom: 'rCRUX-version'
+      tax_assign_cat: probabilistic
+      otu_seq_comp_appr:
+      tax_class_id_cutoff:
+      tax_class_query_cutoff:
+      tax_class_collapse:
+      tax_class_other: not applicable
+      
+   scikit-learn-PR2:
+      otu_db:
+         default: 'TBD'
+         source_file: TBD
+         source_term: TBD
+      otu_db_custom: not applicable
+      tax_assign_cat: probabilistic
+      otu_seq_comp_appr:
+      tax_class_id_cutoff:
+      tax_class_query_cutoff:
+      tax_class_collapse:
+      tax_class_other: not applicable
    
+   Anacapa:
+      otu_db:
+         default: 'TBD'
+         source_file: TBD
+         source_term: TBD
+      otu_db_custom: 'rCRUX-version'
+      tax_assign_cat: probabilistic
+      otu_seq_comp_appr:
+      tax_class_id_cutoff:
+      tax_class_query_cutoff:
+      tax_class_collapse:
+      tax_class_other: not applicable
+      
+      
+# Data Output Section
+output_type:
+   unfiltered:
+      min_reads_cutoff: 1
+      screen_contam_0_1: 0
+      
+   filtered-trusted:
+      min_reads_cutoff: 1
+      screen_contam_0_1: 1
+      screen_contam_method: 'TBD check - 1) The composition of the positive control is used to estimate a maximum vector contamination, which is then subtracted proportionally from all ASVs in the run to remove background tag jumping. 2) Next negative control contaminants are removed either as a wholesale removal of the impacted ASV, or as a partial removal. 3) ASVs assigned to common contaminants are removed: human, food products, pets, common lab/consumable contaminants, laboratory controls.'
+      screen_nontarget_method: 'TBD check - 1) Contaminanting off-target organisms were removed as described in screen_contam_method, removing common contaminants including human, food products, pets, common lab/consumable contaminants, laboratory controls.'
+      screen_other: 'TBD check - In addition to the screening in screen_contam_method and screen_nontarget_method: 1) Remove positive and negative control samples. 2) Extreme low read depth sample removal. 3) Extreme low diversity sample removal (>99.9% of reads in one ASV). 4) Sample removal due to replicate dissimilarity distance from centroid above threshold.'
+      
+   filtered-analytic:
+      min_reads_cutoff:
+         default: 2
+         source_file: decontam_workflow_config
+         source_term: TBD (n_ton_removal)
+      screen_contam_0_1: 1
+      screen_contam_method: 'TBD check - 1) The composition of the positive control is used to estimate a maximum vector contamination, which is then subtracted proportionally from all ASVs in the run to remove background tag jumping. 2) Next negative control contaminants are removed either as a wholesale removal of the impacted ASV, or as a partial removal. 3) ASVs assigned to common contaminants are removed: human, food products, pets, common lab/consumable contaminants, laboratory controls.'
+      screen_nontarget_method: 'TBD check - 1) Contaminanting off-target organisms were removed as described in screen_contam_method, removing common contaminants including human, food products, pets, common lab/consumable contaminants, laboratory controls.'
+      screen_other: 'TBD check - In addition to the screening in screen_contam_method and screen_nontarget_method: 1) Remove positive and negative control samples. 2) Extreme low read depth sample removal. 3) Extreme low diversity sample removal (>99.9% of reads in one ASV). 4) Sample removal due to replicate dissimilarity distance from centroid above threshold. 5) Removal of singleton ASVs. 6) Removal of ASVs found in only one sample (no pattern of presence). Optional: 7) Remove n-ton ASVs (ASVs w/ less than n reads). 8) Low diversity sample removal. 9) Removal of unknown ASVs. 10) Low read depth sample removal. Exact application indicated in manuscript and manuscript code repository.'
+      
 ---
 
 # NOAA PMEL OME Bioinformatics Metabarcoding Protocol
