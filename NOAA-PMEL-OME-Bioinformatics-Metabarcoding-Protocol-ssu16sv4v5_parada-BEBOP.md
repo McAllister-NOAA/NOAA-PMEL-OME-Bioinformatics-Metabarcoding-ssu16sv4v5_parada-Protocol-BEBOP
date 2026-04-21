@@ -28,9 +28,9 @@ sop_bioinformatics: TBD_this_DOI (paste link when published)
 checkls_ver: TBD_bioinformatics_template
 trim_method: 'Cutadapt, primer trimming | DADA2, filterAndTrim (quality and length trimming)'
 trim_param:
-   default: 'Cutadapt, -a "GTGYCAGCMGCCGCGGTAA;required...TTACCGCGGCKGCTGRCAC;optional", -A "CCGYCAATTYMTTTRAGTTT;required...AAACTYAAAKRAATTGRCGG;optional", --discard-untrimmed, -m 1 | DADA2, trunQ = {dada_trunQ}, trimRight = {dada_trimRight}, trimLeft = {dada_trimLeft}'
+   default: 'Cutadapt, -a "{primerF};required...{revcomp_primerR};optional", -A "{primerR};required...{revcomp_primerF};optional", --discard-untrimmed, -m 1 | DADA2, trunQ = {dada_trunQ}, trimRight = {dada_trimRight}, trimLeft = {dada_trimLeft}'
    source_file: REVAMP_config
-   source_term: 'dada_trunQ | dada_trimRight | dada_trimLeft'
+   source_term: 'primerF | primerR | revcomp_primerF | revcomp_primerR | dada_trunQ | dada_trimRight | dada_trimLeft'
 demux_tool: 'pheniqs v2.1.0 | Cutadapt v3.4'
 demux_max_mismatch: 'pheniqs 0 | Cutadapt 0.3'
 merge_tool: 'DADA2, mergePairs'
