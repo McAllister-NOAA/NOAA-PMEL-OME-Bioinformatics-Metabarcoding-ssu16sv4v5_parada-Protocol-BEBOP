@@ -107,6 +107,7 @@ assay_name:
          - REVAMP
          - Anacapa #BLCA
       preferred_taxonomy_method: TBD
+         - TBD ADD DEFAULTS THAT LED EACH METHOD TO BE THE PREFERRED METHOD
    ITS1_sterling:
       target: 'internal transcribed spacer region [SO:0000639]' #MIOP Term
       pcr_primer_forward: TCCGTAGGTGAACCTGCGG
